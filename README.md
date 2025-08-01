@@ -61,12 +61,6 @@ The server will start on port 8080 and wait for client connections.
 client.exe
 ```
 
-You can also provide server IP and nickname as command line arguments:
-
-```bash
-./client-terminal <server_ip> <nickname>
-```
-
 ## Commands
 
 -  `/quit`: Exit the client
