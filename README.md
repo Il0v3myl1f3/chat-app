@@ -16,9 +16,6 @@ A cross-platform in-terminal chat application for local network.
 # Build all components
 make
 
-# Build only server and terminal client
-make server client-terminal
-
 # Build only server
 make server
 
@@ -32,9 +29,12 @@ make client
 # Build using Windows Makefile
 make -f Makefile.windows
 
+# Build using the .bat file
+build.bat
+
 # Or build manually
-gcc -Wall -Wextra -Iinclude -o server.exe src/server/server_main.c src/server/server_net.c -lws2_32
-gcc -Wall -Wextra -Iinclude -o client-terminal.exe src/client/client_terminal.c src/client/client_net_terminal.c -lws2_32
+gcc -Wall -Wextra -std=c99 -pthread -o server.exe src/server/server.c src/print_functions.c -Iinclude -lws2_32
+gcc -Wall -Wextra -std=c99 -pthread -o client.exe src/client/client.c src/print_functions.c -Iinclude -lws2_32
 ```
 
 ## Usage
@@ -51,14 +51,14 @@ server.exe
 
 The server will start on port 8080 and wait for client connections.
 
-### Using the Terminal Client
+### Starting the Client
 
 ```bash
 # Linux/macOS
-./client-terminal
+./client
 
 # Windows
-client-terminal.exe
+client.exe
 ```
 
 You can also provide server IP and nickname as command line arguments:
@@ -70,7 +70,7 @@ You can also provide server IP and nickname as command line arguments:
 ## Commands
 
 -  `/quit`: Exit the client
-- `Ctrl+C`: Force quit (terminal client)
+- `Ctrl+C`: Force quit
 
 ## Platform Compatibility
 
