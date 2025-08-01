@@ -26,9 +26,6 @@ make client
 ### Windows
 
 ```bash
-# Build using Windows Makefile
-make -f Makefile.windows
-
 # Build using the .bat file
 build.bat
 
