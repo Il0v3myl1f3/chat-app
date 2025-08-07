@@ -55,7 +55,8 @@ typedef enum {
     MSG_TYPE_SYSTEM,
     MSG_TYPE_PRIVATE,
     MSG_TYPE_NICKNAME_TAKEN,
-    MSG_TYPE_NICKNAME_AVAILABLE
+    MSG_TYPE_NICKNAME_AVAILABLE,
+    MSG_TYPE_RENAME
 } msg_type_t;
 
 typedef struct {
