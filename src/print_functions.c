@@ -37,12 +37,23 @@ void print_welcome_message() {
     printf("Type " BOLD_CYAN "/help" RESET " for extra commands\n\n");
 }
 
-void print_help(void) {
+void print_client_help(void) {
     printf(
         "\n" CYAN "=== Chat Client Commands ===" RESET "\n"
         BOLD_CYAN "/help" RESET "        - Show this help message\n"
         BOLD_CYAN "/quit" RESET "        - Leave the chat and disconnect\n"
-        BOLD_CYAN "/nick" RESET "        - Change your nickname\n"
+        BOLD_CYAN "/nick <new_nick>" RESET "        - Change your nickname\n"
+        BOLD_CYAN "/shh <nick> <msg>" RESET " - Send private message\n"
+        BOLD_CYAN "<message>" RESET "      - Send a chat message\n"
+        CYAN "============================" RESET "\n\n"
+    );
+}
+
+void print_server_help(void) {
+    printf(
+        "\n" CYAN "=== Chat Client Commands ===" RESET "\n"
+        BOLD_CYAN "/help" RESET "        - Show this help message\n"
+        BOLD_CYAN "/quit" RESET "        - Disconnect\n"
         BOLD_CYAN "/shh <nick> <msg>" RESET " - Send private message\n"
         BOLD_CYAN "<message>" RESET "      - Send a chat message\n"
         CYAN "============================" RESET "\n\n"
